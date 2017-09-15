@@ -1,0 +1,25 @@
+{
+    "prepare_queue": {
+        "installed": [],
+        "uninstalled": []
+    },
+    "config_munge": {
+        "files": {}
+    },
+    "installed_plugins": {
+        "cordova-plugin-whitelist": {
+            "PACKAGE_NAME": "com.cvd.demo"
+        },
+        "cordova-plugin-file": {
+            "PACKAGE_NAME": "com.cvd.demo"
+        },
+        "cordova-sqlite-storage": {
+            "PACKAGE_NAME": "com.cvd.demo"
+        }
+    },
+    "dependent_plugins": {
+        "cordova-plugin-compat": {
+            "PACKAGE_NAME": "com.cvd.demo"
+        }
+    }
+}
