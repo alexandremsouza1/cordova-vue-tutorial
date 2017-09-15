@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>选择器</title>
+  <h1>选择器</h1>
+  <h2>元素选择器</h2>
+  <hr>
+  <h3>分组选择器</h3>
+  <span>内容</span>
+  <hr>
+  <h4>通配符选择器</h4>
+</head>
+<body>
+
+</body>
+<style>
+  /*元素选择器 ---- start*/
+  /*文档的元素是最基本的选择器*/
+  html {
+    color: red
+  }
+
+  p {
+    color: gray
+  }
+
+  h2 {
+    color: silver
+  }
+
+  /*元素选择器 ---- end*/
+
+  /*分组选择器 ---- start*/
+  /*使用“,”隔开，如果不适用“,” 含义完全不同*/
+  h3, span {
+    color: green;
+  }
+
+  /*分组选择器 ---- end*/
+
+  /*通配符选择器 ----start*/
+  /*相当于文档中所有元素的分组选择器*/
+  * {
+    /*color: yellow;*/
+  }
+  /*通配符选择器 ----end*/
+</style>
+</html>
