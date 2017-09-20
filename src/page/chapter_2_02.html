@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>选择器</title>
+  <!--多类选择器-->
+  <p class="urgent warning">多类选择器</p>
+  <hr>
+  <!--ID选择器-->
+  <p id="lead-para">ID选择器</p>
+  <hr>
+  <!--属性选择器-->
+  <!--简单属性选择-->
+  <h3 class="hoopla">属性选择器</h3>
+  <h3 class="servere">属性选择器</h3>
+  <h3 class="fancy">属性选择器</h3>
+  <hr>
+  <!--根据多个属性进行选择-->
+  <a href="http://www.w3.org/" title="W3C Home">W3C</a><br>
+  <a href="http://www.webstandards.org/">Standards</a><br>
+  <a title="W3C Home">W3C</a><br>
+  <hr>
+  <!--根据具体属性值选择-->
+  <planet></planet>
+  <planet moon="1">Barth</planet>
+  <br>
+  <planet moon="2">Mars</planet>
+  <hr>
+  <!--根据多个属性值选择-->
+  <a href="https://www.w3.org/" title="W3C Home">W3C</a><br>
+  <a href="https://www.webstandards.org/">Standards</a><br>
+  <a title="W3C Home">W3C</a><br>
+  <hr>
+  <!--根据部分属性值进行选择-->
+  <p class="urgent1 warning1">根据部分属性值进行选择</p>
+  <hr>
+</head>
+<body>
+
+</body>
+<style>
+  .warning {
+    font-weight: bold
+  }
+
+  .urgent {
+    font-style: italic
+  }
+
+  .warning.urgent {
+    background: silver
+  }
+
+  /* *#lead-para {
+     font-weight: bold
+   }*/
+  #lead-para {
+    font-weight: bold
+  }
+
+  /*属性选择器*/
+  /*选择所有class 属性（值不限）的所有h1元素*/
+  h3[class] {
+    color: silver
+  }
+
+  /*即有href属性 又有title属性的a 标签*/
+  a[href][title] {
+    font-weight: bold;
+    color: #4b946a;
+  }
+
+  /*选择属性moon值为“1”的planet元素*/
+  planet[moon="1"] {
+    font-weight: bold
+  }
+
+  /*多个属性值选择*/
+  a[href="https://www.w3.org/"][title="W3C Home"] {
+    font-size: 200%;
+  }
+
+  /*根据部分属性值进行选择*/
+  p[class~="urgent1"] {
+    font-weight: bold;
+    color: #189ef0;
+  }
+</style>
+</html>
