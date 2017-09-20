@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>选择器</title>
+</head>
+<body>
+<!--后代选择器-->
+<ul>
+  <li>后代选择器
+    <ol>
+      <li>List item 1-1</li>
+      <li>List item 1-2</li>
+      <li>List item 1-3
+        <ol>
+          <li>List item 1-3-1</li>
+          <li>List item <em>1-3-2</em></li>
+          <li>List item 1-3-3</li>
+        </ol>
+      </li>
+      <li>List item 1-4</li>
+    </ol>
+  </li>
+</ul>
+<hr>
+<!--选择子元素-->
+<h3>This is <strong>very</strong> important.</h3>
+<h3>This is <em>really <strong>very</strong></em> important.</h3>
+<hr>
+<!--选择相邻兄弟元素-->
+<h3>选择相邻兄弟元素</h3>
+<h3>选择相邻兄弟元素</h3>
+<p>我是相邻兄弟</p>
+<p>我不是相邻兄弟</p>
+</body>
+<style>
+  /*后代选择器*/
+  /*两个元素之间的层次间隔可以是无限的*/
+  ul em {
+    color: gray;
+  }
+
+  /*选择子元素*/
+  h3 > strong {
+    color: red;
+  }
+
+  /*选择相邻兄弟元素*/
+  h3 + p{
+    background: silver;
+  }
+</style>
+</html>
