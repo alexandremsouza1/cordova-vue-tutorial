@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>伪类和伪元素</title>
+</head>
+<>
+<!--静态伪类选择器-->
+<a href="http://www.w3.org/">W3C web site</a>
+<hr>
+<a href="http://www.mysite.net/">My home page</a>
+<a href="http://www.mysite.net/" class="external">Another home page</a>
+<hr>
+<!--动态伪类选择器-->
+<a href="http://www.baidu.com" class="dynamic">动态伪类选择器</a>
+<hr>
+<input id="name" type="text" value="Eric Meyer"><label for="name">Name</label><br>
+<input id="title" type="text" placeholder="请输入名字"><label for="title">title</label><br>
+<input id="E-mail" type="text"><label for="E-mail">E-mail</label><br>
+</body>
+<style>
+  /*静态伪类选择器*/
+  a:visited {
+    color: red;
+  }
+
+  /*  a:visited {
+      color: silver;
+      text-decoration: line-through;
+      font-style: italic;
+    }*/
+
+  a:link {
+    color: green;
+  }
+
+  /*伪类选择器与其他选择器结合*/
+  a.external:link {
+    color: #189ef0;
+  }
+
+  a.external:visited {
+    color: maroon;
+  }
+
+  /*动态伪类选择器*/
+  a.dynamic:link {
+    color: #189ef0;
+  }
+
+  a.dynamic:visited {
+    color: #8a4182;
+  }
+
+  a.dynamic:focus {
+    color: #4b946a;
+  }
+
+  a.dynamic:hover {
+    color: #ba9d37;
+  }
+
+  a.dynamic:active {
+    color: #ca3a11;
+  }
+
+  /*动态伪类选择器*/
+  input:focus {
+    background: silver;
+    font-weight: bold;
+  }
+
+ /* body *:hover {
+    background: yellow
+  }*/
+
+</style>
+</html>
