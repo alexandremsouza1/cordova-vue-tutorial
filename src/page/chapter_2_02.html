@@ -34,6 +34,18 @@
   <!--根据部分属性值进行选择-->
   <p class="urgent1 warning1">根据部分属性值进行选择</p>
   <hr>
+  <!--子串匹配属性选择器-->
+  <span class="barren rock">Mercury</span>
+  <span class="cloudy barren">Venus</span>
+  <span class="life-bearing cloudy">Earth</span>
+  <hr>
+  <!--特定属性选择类型-->
+  <h1 lang="en">Hello!</h1>
+  <p lang="en-us">Greetings</p>
+  <div lang="en-au">G'day!</div>
+  <p lang="fr">Bonjour!</p>
+  <h4 lang="cy-en">Jrooana!</h4>
+  <hr>
 </head>
 <body>
 
@@ -85,5 +97,32 @@
     font-weight: bold;
     color: #189ef0;
   }
+
+  /*等价于"p.urgent1"*/
+  /*p.urgent1{
+    font-weight: bold;
+    color: #189ef0;
+  }*/
+
+  /*字串匹配属性选择器*/
+  /*"*"包含属性值 */
+  span[class*="cloud"] {
+    font-style: italic;
+  }
+
+  /*属性值以bar开头*/
+  span[class^="bar"] {
+    background: silver;
+  }
+
+  /*属性值以y结尾*/
+  span[class$="y"] {
+    font-weight: bold;
+  }
+
+  /*特定属性选择类型*/
+  /**[lang|="en"] {
+    color: #8a4182;
+  }*/
 </style>
 </html>
