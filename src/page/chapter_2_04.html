@@ -17,6 +17,33 @@
 <input id="name" type="text" value="Eric Meyer"><label for="name">Name</label><br>
 <input id="title" type="text" placeholder="请输入名字"><label for="title">title</label><br>
 <input id="E-mail" type="text"><label for="E-mail">E-mail</label><br>
+<hr>
+<!--选择第一个子元素-->
+<div>
+  <p>These are the necessary steps:</p>
+  <ul>
+    <li>Insert key</li>
+    <li>Turn key<strong>clockwise</strong></li>
+    <li>Push accelerator</li>
+  </ul>
+  <p> Do <em>not</em> push the brake the same time as acceleratro</p>
+</div>
+<hr>
+<!--结合伪类-->
+<a href="http://www.baidu.com/" class="combine">go</a>
+<br>
+<!--设置首字母样式-->
+<p class="first-letter">设置首字母样式</p>
+<hr>
+<!--设置第一行的样式-->
+<p class="first-line">
+  设置第一行的样式<br>
+  设置第一行的样式<br>
+  设置第一行的样式<br>
+</p>
+<hr>
+<!--设置之前和之后元素的样式-->
+<h2 class="bef">This is an h2 element</h2>
 </body>
 <style>
   /*静态伪类选择器*/
@@ -70,9 +97,51 @@
     font-weight: bold;
   }
 
- /* body *:hover {
-    background: yellow
-  }*/
+  /* body *:hover {
+     background: yellow
+   }*/
+
+  /*选择第一个子元素*/
+  p:first-child {
+    font-weight: bold;
+  }
+
+  li:first-child {
+    text-transform: uppercase;
+  }
+
+  /*结合伪类*/
+  a.combine:link:hover {
+    color: red
+  }
+
+  a.combine:visited:hover {
+    color: maroon
+  }
+
+  /*设置首字母样式*/
+  p.first-letter:first-letter {
+    color: red;
+  }
+
+  /*设置第一行的样式*/
+  p.first-line:first-line {
+    color: purple;
+  }
+
+  /*:first-line和:first-letter 伪元素只能用于块元素*/
+  /*所有伪元素都必须在出现该伪元素的选择器的最后面*/
+
+  /*设置之前和之后元素的样式*/
+  h2.bef:before {
+    content: "[[";
+    color: silver
+  }
+
+  h2.bef:after {
+    content: "]]";
+    color: silver
+  }
 
 </style>
 </html>
