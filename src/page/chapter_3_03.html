@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>结构和层叠</title>
+</head>
+<body>
+<!--继承-->
+<h1>Meerkat<em>Central</em></h1>
+<hr>
+<ul>
+  <li>Oh,don't you wish</li>
+  <li>That you could be a fish</li>
+  <li>And swim along with me</li>
+</ul>
+
+<ol>
+  <li>Oh,don't you wish</li>
+  <li>That you could be a fish</li>
+  <li>And swim along with me</li>
+</ol>
+<hr>
+<!--0特殊性比无特殊性要强-->
+<h3 id="page-title">继承 <em>无特殊性</em></h3>
+<hr>
+</body>
+<style>
+  /*继承*/
+  /*em元素继承了这个color值*/
+  h1 {
+    color: gray
+  }
+
+  /*继承对无序列表也适用*/
+  /*继承对有序列表不适用*/
+  ul {
+    color: gray
+  }
+
+  /*框模型属性（包括外边距、内边距、背景、和边框）都不能被继承*/
+
+  /*0特殊性比无特殊性要强*/
+
+  /*通配选择器 0 特殊性*/
+  * {
+    color: gray /*winner*/
+  }
+
+  /*em继承此元素样式 继承无特殊性*/
+  h3#page-title {
+    color: black;
+  }
+</style>
+</html>
