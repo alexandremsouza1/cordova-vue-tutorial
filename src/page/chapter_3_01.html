@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>结构和层叠</title>
+</head>
+<body>
+<h3>特殊性</h3>
+<p class="bright"><em class="dark">第五条规则的特殊性高于第二条规则的特殊性</em></p>
+</body>
+<style>
+  /*特殊性*/
+  /*特殊性值表述为4个部分，如:0,0,0,0*/
+
+  /*对于选择器中给定的各个 ID属性值，加 0,1,0,0*/
+  /*对于选择器中给定的各个 类属性值，属性选择或伪类，加 0,0,1,0*/
+  /*对于选择器中给定的各个 元素、伪元素，加 0,0,0,1*/
+  /*结合符和通配选择器对特殊性没有任何贡献*/
+
+  /*特殊性举例*/
+  h1 {color: red}  /*specificity= 0,0,0,1*/
+  p em{color: purple} /*specificity= 0,0,0,2*/
+  .grape{color: purple} /*specificity= 0,0,1,0*/
+  *.bright{color: yellow} /*specificity= 0,0,1,0*/
+  p.bright em.dark{color: maroon} /*specificity= 0,0,2,2*/
+  #id216{color: blue} /*specificity= 0,1,0,0*/
+  div#sidebar *[href] /*specificity= 0,1,1,1*/
+
+  /*练习举例*/
+  h1{color: red} /*specificity= 0,0,0,1*/
+  body h1{color: red} /*specificity= 0,0,0,2 (winnder)*/
+
+  h2.grape{color: purple} /*specificity= 0,0,1,1 (winder)*/
+  h2{color: silver} /*specificity= 0,0,0,1*/
+
+  html > body table tr[id="total"] td ul >li {color: maroon} /*specificity= 0,0,1,7*/
+  li#answer{color: navy} /*specificity= 0,1,0,1 (winner)*/
+
+  /*特殊性值 0,0,1,0 比值 0,0,0,13更高*/
+  /*特殊性值1,0,0,0 大于以 0开头的所有特殊性*/
+</style>
+</html>

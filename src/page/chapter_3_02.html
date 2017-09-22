@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>结构和层叠</title>
+</head>
+<body>
+  <h2>声明和特殊性</h2>
+  <h1>Greetings!</h1>
+  <p class="aside">规则三胜出</p>
+  <p>There are many ways to greet a person</p>
+  <h1>Salutations!</h1>
+  <p>There is nothing finger than a hearty welcome from one's fello man.</p>
+  <p class="aside">规则三胜出</p>
+  <hr>
+  <!--内联样式特殊性-->
+  <!--1,0,0,0 第一个0是为内联样式声明保留的，它比其他生命的特殊性都高-->
+  <h1 id="meadow" style="color: green">内联样式特殊性</h1>
+  <hr>
+  <!--重要性-->
+  <p class="dark" style="color: red">重要声明的结束分号之前插入!important来标志</p>
+</body>
+<style>
+  /*声明和特殊性*/
+  h1 + p {color: black;font-style: italic} /*0,0,0,2*/
+  p{color: gray;background: white;font-style: normal} /*0,0,0,1*/
+  *.aside {color: purple;background: silver } /*0,0,1,0*/
+
+  /*内联样式特殊性*/
+  h1#meadow{ color: red}
+
+  /*重要声明*/
+  /*重要声明优先级最高，高于内联样式和其他非重要声明*/
+  p.dark{color: blue !important;background: white} /*winner*/
+  p.dark{color: yellow}
+</style>
+</html>
