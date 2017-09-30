@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>结构和层叠</title>
+</head>
+<body>
+<!--层叠-->
+<!--按权重和来源排序-->
+
+<!--按权重匹配-->
+<p style="color: black">Well, <em>hello</em> there!</p>
+
+<!--按来源匹配-->
+<hr>
+<!--按特殊性排序-->
+<p id="bright">Well,hello there!</p>
+<hr>
+<!--按顺序排序-->
+<h3>按顺序排序</h3>
+
+<!--LVHA顺序-->
+<a class="lvha" href="http://www.baidu.com">www.baidu.com</a>
+</body>
+<style>
+  /*按权重匹配*/
+  p {
+    color: gray !important;
+  }
+
+  /*按特殊性排序*/
+  p#bright {
+    color: silver /*0,1,0,1*/
+  }
+
+  p {
+    color: black /*0,0,0,1*/
+  }
+
+  /*较高特殊性强于较低特殊性*/
+
+  /*按顺序排序*/
+  /*如果两个规则权重、来源、特殊性完全相同，样式表中最后一个出现会胜出*/
+  /*认为导入样式表的声明在前、主样式表的声明在后*/
+  h3 {color: red}
+  h3 {color: blue}
+
+  /*LVHA顺序*/
+  a.lvha:link {color: blue;}
+  a.lvha:visited {color: green;}
+  a.lvha:hover {color: red;}
+  a.lvha:active {color: orange;} /*winner*/
+  /*按照LVHA顺序，最后一个声明将胜出*/
+</style>
+</html>
