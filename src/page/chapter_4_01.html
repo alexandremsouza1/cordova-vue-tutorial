@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>值和单位</title>
+</head>
+<body>
+<!--颜色-->
+<!--灰度值表-->
+<p class="one">[one] This is a paragraph</p>
+<p class="two">[two] This is a paragraph</p>
+<p class="three">[three] This is a paragraph</p>
+<p class="four">[four] This is a paragraph</p>
+<p class="five">[five] This is a paragraph</p>
+<p class="six">[six] This is a paragraph</p>
+<p class="seven">[seven] This is a paragraph</p>
+<p class="eight">[eight] This is a paragraph</p>
+<p class="nine">[nine] This is a paragraph</p>
+<p class="ten">[ten] This is a paragraph</p>
+<hr>
+<!--剪裁-->
+<!--如果值落在可取范围之外，都会“剪裁”到最接近的范围边界-->
+<!--如果一个值大于100%或小于0%，就会默认地调整到100%或0%-->
+<p class="eleven">[eleven] This is a paragraph</p>
+<p class="twelve">[twelve] This is a paragraph</p>
+<p class="thirteen">[thirteen] This is a paragraph</p>
+</body>
+<style>
+  /*灰度值表*/
+  p.one {
+    color: rgb(0%, 0%, 0%);
+  }
+
+  p.two {
+    color: rgb(20%, 20%, 20%);
+  }
+
+  p.three {
+    color: rgb(40%, 40%, 40%);
+  }
+
+  p.four {
+    color: rgb(60%, 60%, 60%);
+  }
+
+  p.five {
+    color: rgb(80%, 80%, 80%);
+  }
+
+  p.six {
+    color: rgb(0, 0, 0);
+  }
+
+  p.seven {
+    color: rgb(51, 51, 51);
+  }
+
+  p.eight {
+    color: rgb(102, 102, 102);
+  }
+
+  p.nine {
+    color: rgb(153, 153, 153);
+  }
+
+  p.ten {
+    color: rgb(204, 204, 204);
+  }
+
+  /*剪裁*/
+  p.eleven {
+    color: rgb(300%, 4200%, 110%); /*100%,100%,100%*/
+  }
+
+  p.twelve {
+    color: rgb(0%, -40%, -5000%); /*0%,0%,0%*/
+  }
+
+  p.thirteen {
+    color: rgb(142, 444, -13); /*42,255,0*/
+  }
+</style>
+</html>
