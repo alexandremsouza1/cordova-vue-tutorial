@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>文本属性</title>
+</head>
+<body>
+<!--水平对齐-->
+<p class="left">文本左对齐</p>
+<p class="right">文本右对齐</p>
+<p class="center">文本居中对齐</p>
+<hr>
+<!--text-align不会控制元素对齐，只影响内部内容-->
+<!--此例中，p元素并没有居中-->
+<div style="width: 60%;text-align: center">
+  <p class="left">文本左对齐</p>
+  <p class="right">文本右对齐</p>
+  <p class="center">文本居中对齐</p>
+  <p>text-align不会控制元素对齐，只影响内部内容.此例中,p元素并没有居中
+  </p>
+</div>
+<hr>
+<!--两端对齐-->
+<p class="justify">This is a paragraph of justified text.Notice that the spacing between words. or even between
+  individual letters,depends gratly on the number of words in each line. Intraword and intracharacter spacing is
+  adjusted to create the justification effect,so it can effectively override values for properties such as word-spacing
+  and letter-spacing</p>
+</body>
+<style>
+  /*水平对齐*/
+  /*text-align只应用于块级元素（如段落）*/
+  p.left {
+    text-align: left;
+  }
+
+  p.right {
+    text-align: right;
+  }
+
+  p.center {
+    text-align: center;
+  }
+
+  /***text-align不会控制元素对齐，只影响内部内容***/
+
+  /*两端对齐*/
+  p.justify{
+    text-align: justify;
+    /*word-spacing: 10px;*/
+  }
+</style>
+</html>
