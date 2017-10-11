@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>文本属性</title>
+</head>
+<body>
+<!--缩进和水平对齐-->
+<!--缩进文本-->
+<p>This is a paragraph element,
+  which means that the first line will be indented a quarter-inch.
+  The other lines in the paragraph will not be indented,
+  no matter how long the paragraph may be</p>
+
+<p class="negative">This is a paragraph element,
+  which means that the first line will be indented a quarter-inch.
+  The other lines in the paragraph will not be indented,
+  no matter how long the paragraph may be</p>
+
+<!--浮动图像和负文本缩进-->
+<img src="star.jpg"
+     style="width: 60px;height: 60px;
+     float: left" alt="An image of a five-pointed star.">
+<p class="hang">This paragraph has a negatively indented first line,which overlaps the floated image that precedes the
+  text. Subsequent lines do not overlap the image,since they are not indented in any way</p>
+<hr>
+<!--用百分数实现缩进-->
+<div>
+  <p>This paragraph is contained inside a DIV,which is 400px wide, so the first line of the paragraph is indented 40px
+    (400 *10%=40).
+    This is because percentages are computed with respect to the width of the element.
+  </p>
+</div>
+<!--缩进继承-->
+<div id="outer">
+  <div id="inner">
+    This first line of the DIV is indented by 50 pixels.
+    <p>This paragraph is 200px wide,
+      and the first line of the paragraph is indented 50px.
+      This is because computed values for 'text-indent' are inherited,instead of the declared values</p>
+  </div>
+</div>
+</body>
+<style>
+  /*缩进文本*/
+  p {
+    text-indent: 3em;
+  }
+
+  p.negative {
+    text-indent: -4em; /*可以设置为负值*/
+    padding-left: 4em;
+  }
+
+  p.hang {
+    text-indent: -25px;
+  }
+
+  /*用百分数实现缩进*/
+  div {
+    width: 400px
+  }
+
+  p {
+    text-indent: 10%
+  }
+
+  /*缩进继承*/
+  div#outer {
+    width: 500px;
+  }
+
+  div#inner {
+    text-indent: 10%;
+  }
+
+  div#inner p {
+    width: 200px;
+  }
+</style>
+</html>
