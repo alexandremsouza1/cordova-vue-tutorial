@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>文本属性</title>
+</head>
+<body>
+<!--垂直对齐文本-->
+<!--基线对齐-->
+<p>
+  The image found in this paragraph <img src="icon/logo.png" alt="">has its
+  bottom edge aligned with the baseline of the text in the paragraph.
+</p>
+<hr>
+<!--上标、下标-->
+<p>This paragraph contains
+  <span class="raise">superscripted</span>
+  and
+  <span class="lower">subscripted</span>
+  text
+</p>
+<hr>
+<!--底端对齐-->
+<p>This paragraph,as you can see quite clearly,contains a
+  <img src="icon/cordova_icon.png" class="feeder"> image and a
+  <img src="icon/android_icon.png" class="feeder"> image and
+  then some text that is not tall.
+</p>
+<hr>
+</body>
+<style>
+  /*vertical-align只应用于行内元素和替换元素*/
+
+  /*baseline 要求一个元素的极限与其父元素的基线对齐
+             如果一个垂直对齐元素没有基线，如 图像、表单输入元素，或其他替换元素--
+             那么钙元素的底端与其父元素对齐
+   */
+  img {
+    vertical-align: baseline
+  }
+
+  /*上标、下标*/
+  /*super 和 sub 不会改变元素字体大小*/
+  span.raise {
+    font-size: 10px;
+    vertical-align: super;
+  }
+
+  span.lower {
+    vertical-align: sub;
+  }
+
+  /*底端对齐*/
+  /*将元素行内框的底端与行的底端对齐*/
+  .feeder {
+    vertical-align: bottom;
+  }
+</style>
+</html>
