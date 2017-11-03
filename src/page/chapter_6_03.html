@@ -20,6 +20,12 @@
     the lines
     of text to overlap each by a small amount.</p>
 </div>
+<div class="cl5">
+  <p class="cl5">
+    This paragraph's 'font-size' is 18px, and since the 'line-height' set for the parent div is 1.5, the 'line-height'
+    for this paragraph is 27px (18*1.5).
+  </p>
+</div>
 </body>
 <style>
   /*行高*/
@@ -51,6 +57,16 @@
 
   p.cl4 {
     font-size: 20px;
+  }
+
+  /*使用line-height缩放因子*/
+  /*使用line-height缩放因子解决继承问题*/
+  div.cl5 {
+    line-height: 1.5; /*缩放因子将是继承值，不是计算值*/
+  }
+
+  p.cl5 {
+    font-size: 18px;
   }
 </style>
 </html>
