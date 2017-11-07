@@ -27,6 +27,18 @@
   then some text that is not tall.
 </p>
 <hr>
+<!--百分数-->
+<p>We can either
+  <sup>soar to new heights</sup> or,instead,
+  <sub>sink into despair...</sub>
+</p>
+
+<!--设置为50%的span元素对齐时，会使其极限升高9像素，-->
+<!--这是元素继承的line-height值（18px）的一半，而不是7像素-->
+<div style="font-size: 14px;line-height: 18px">
+  I felt that,if nothing else,I deserverd a
+  <span style="vertical-align: 50%;">raise</span> for my efforts
+</div>
 </body>
 <style>
   /*vertical-align只应用于行内元素和替换元素*/
@@ -54,6 +66,15 @@
   /*将元素行内框的底端与行的底端对齐*/
   .feeder {
     vertical-align: bottom;
+  }
+
+  /*百分数*/
+  sub {
+    vertical-align: -100%
+  }
+
+  sup {
+    vertical-align: 100%
   }
 </style>
 </html>
