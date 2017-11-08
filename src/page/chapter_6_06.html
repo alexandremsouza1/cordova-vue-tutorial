@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>文本属性</title>
+</head>
+<body>
+<!--文本装饰-->
+<p class="emph">The text of this paragraph.which has a class of 'emph'. is underlined.</p>
+<p class="topper">The text of this paragraph, which has a class of 'topper',is overlined.</p>
+<p class="old">The text of this paragraph,which has a class of 'old', is stricken(line through)</p>
+<p class="annoy">The text of this paragraph,which has a class of 'annoy',is blinking(trust us)</p>
+<p class="plain">The text of this paragraph,which has a class of 'plain',has no decoration of any kind.</p>
+<hr>
+<!--文本阴影-->
+<p class="cl1">Keep your eye on the shadows. They move when you aren't watching</p>
+<p class="cl2">I run between the shadows some phantoms. some are real.</p>
+<p class="cl3">Slipping through the dark streets and the echoes and the shadows...</p>
+<hr>
+<!--处理空白符-->
+<p class="cl4">This paragraph has many
+  spaces in it</p>
+
+<p class="cl5">This paragraph has many
+  spaces in it</p>
+<hr>
+<table>
+  <th>
+  <td>值</td>
+  <td>空白符</td>
+  <td>换行符</td>
+  <td>自动换行</td>
+  </th>
+  <tr>
+    <td>pre-line</td>
+    <td>合并</td>
+    <td>保留</td>
+    <td>允许</td>
+  </tr>
+  <tr>
+    <td>normal</td>
+    <td>合并</td>
+    <td>忽略</td>
+    <td>允许</td>
+  </tr>
+  <tr>
+    <td>nowrap</td>
+    <td>合并</td>
+    <td>忽略</td>
+    <td>不允许</td>
+  </tr>
+  <tr>
+    <td>pre</td>
+    <td>保留</td>
+    <td>保留</td>
+    <td>不允许</td>
+  </tr>
+  <tr>
+    <td>pre-wrap</td>
+    <td>保留</td>
+    <td>保留</td>
+    <td>允许</td>
+  </tr>
+</table>
+</body>
+<style>
+  /*文本装饰*/
+  p.emph {
+    text-decoration: underline
+  }
+
+  p.topper {
+    text-decoration: overline
+  }
+
+  p.old {
+    text-decoration: line-through
+  }
+
+  p.annoy {
+    text-decoration: blink
+  }
+
+  p.plain {
+    text-decoration: none
+  }
+
+  /*文本阴影*/
+  p.cl1 {
+    color: black;
+    text-shadow: silver 2px 2px 2px; /*颜色 向右偏移 向下偏移 模糊度*/
+  }
+
+  p.cl2 {
+    color: white;
+    text-shadow: 0 0 4px black;
+  }
+
+  p.cl3 {
+    color: black;
+    text-shadow: 1em 1em 5px gray, -1em -1em silver;
+  }
+
+  /*处理空白符*/
+  p.cl4 {
+    white-space: normal; /*丢掉多余的空格、换行符也会转换成空格、多个空格序列也会转换成一个空格*/
+  }
+
+  /*处理空白符*/
+  p.cl5 {
+    white-space: pre; /*空格不会被忽略*/
+  }
+</style>
+</html>
