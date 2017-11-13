@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>基本视觉格式化</title>
+</head>
+<body>
+<!--水平格式化-->
+<!--width 影响的是内容区的宽度，而不是整个可见的元素框-->
+<div style="background: pink;width: 400px">
+  <p class="cl1">wideness?</p>
+</div>
+
+<!--可见元素框的宽度现在是220像素，左边和右边分别增加10像素的内边距，外边距向左右延伸20像素。-->
+<!--使整个元素框的宽度为260像素-->
+<div style="background: pink;width: 400px">
+  <p class="cl2">wideness?</p>
+</div>
+<!--块级元素框的水平部分中和就等于父元素的width-->
+<hr>
+<!--水平属性-->
+<!--水平格式化的7个属性是margin-left、border-left、padding-left、width、padding-right、border-right、margin-right-->
+<!--这7个属性的值加载一起必须是元素包含块的宽度，这往往是块元素的父元素的width值。-->
+<!--只有三个属性可以设置为auto：width、margin-left、margin-right-->
+
+<!--使用auto-->
+<div style="background: pink;width: 400px">
+  <p class="cl3">A paragraph.</p>
+</div>
+
+<div style="background: pink;width: 400px">
+  <p class="cl4">A paragraph.</p>
+</div>
+
+<div style="background: pink;width: 400px">
+  <p class="cl5">A paragraph.</p>
+</div>
+<hr>
+<!--不只一个auto-->
+<div style="background: pink;width: 400px">
+  <p class="cl6">A paragraph.</p>
+</div>
+
+<div style="background: pink;width: 400px">
+  <p class="cl7">A paragraph.</p>
+</div>
+
+<div style="background: pink;width: 400px">
+  <p class="cl8">A paragraph.</p>
+</div>
+<hr>
+<div style="background: pink;width: 400px">
+  <p class="cl9">A paragraph.</p>
+</div>
+
+<div style="background: pink;width: 400px">
+  <p class="cl10">A paragraph.</p>
+</div>
+<hr>
+<!--替换元素-->
+<!--非替换元素的所有规则同样适用于替换元素-->
+<!--只有一个例外：如果width为auto，元素的宽度则是内容的固有宽度-->
+<img src="icon/android_icon.png" style="display:block;width: auto;margin: 0;">
+<!--如果一个替换元素的width不同于固定宽度，height值也会成比例缩放-->
+<img src="icon/android_icon.png" style="display:block;width: 110px;margin: 0;">
+</body>
+<style>
+  /*水平格式化*/
+  p.cl1 {
+    width: 200px;
+    background: darkseagreen;
+  }
+
+  p.cl2 {
+    width: 200px;
+    padding: 10px;
+    margin: 20px;
+    background: darkseagreen;
+  }
+
+  /*使用auto*/
+  p.cl3 {
+    background: darkseagreen;
+    margin-left: auto; /* ‘auto’ margin-left evlaute to 200px*/
+    margin-right: 100px;
+    width: 100px;
+  }
+
+  p.cl4 {
+    background: darkseagreen;
+    margin-left: 100px; /* right margin forced to be 200px.*/
+    margin-right: 100px;
+    width: 100px;
+  }
+
+  p.cl5 {
+    background: darkseagreen;
+    margin-left: 100px; /* width 将被自动计算，达到需要的总宽度（即父元素的内容宽度）*/
+    margin-right: 100px;
+    width: auto;
+    /*text-align: center;*/ /*不能使元素居中，只能使元素内容居中*/
+  }
+
+  /*以下等价于上面*/
+  /*  p.cl5 {
+      background: darkseagreen;
+      margin-left: 100px;
+      margin-right: 100px;
+    }*/
+
+  /*不只一个auto*/
+  /*如果两个外边距都设置为auto，他们会设置相等的长度，将元素在父元素中居中*/
+  p.cl6 {
+    margin-left: auto;
+    margin-right: auto;
+    width: 100px;
+    background: darkseagreen;
+  }
+
+  /*设置auto的外边距将会减为0,width 会设置为所需值，使得元素完全填充包含块*/
+  p.cl7 {
+    margin-left: auto;
+    margin-right: 100px;
+    width: auto;
+    background: darkseagreen;
+  }
+
+  /*两个外边距都被设置为0，而width尽可能宽*/
+  p.cl8 {
+    margin-left: auto;
+    margin-right: auto;
+    width: auto;
+    background: darkseagreen;
+  }
+
+  /*外边距可以为负值*/
+  p.cl9 {
+    margin-left: 10px;
+    margin-right: -50px;
+    width: auto;
+    background: darkseagreen;
+  }
+
+  /*负左外边距*/
+  p.cl10 {
+    margin-left: -50px;
+    margin-right: 10px;
+    width: auto;
+    border: 3px solid gray;
+    background: darkseagreen;
+  }
+</style>
+</html>
