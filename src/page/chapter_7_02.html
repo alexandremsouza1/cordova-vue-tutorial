@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>基本视觉格式化</title>
+</head>
+<body>
+<!--垂直格式化-->
+<!--一个元素的默认高度由其内容决定。高度还会受内容宽度的影响；段落越窄，响应地就会越高。-->
+
+<!--垂直属性-->
+<!--margin-top、border-top、padding-top、height、padding-bottom、border-bottom和margin-bottom-->
+<!--只有3个属性可以设置为auto，height、margin-top、margin-bottom-->
+<!--如果将一个元素的上、下外边距设置为auto，实际上他们都会重置为0，使元素框没有外边距-->
+
+<!--百分数高度-->
+<!--如果一个块级正常流元素的height设置为一个百分数，这个值则是包含块height的一个百分数-->
+<div style="height: 6em;">
+  <p style="height: 50%;">Half as tall</p>
+</div>
+<div style="height: auto">
+  <p style="height: 50%;">Not half as tall;height reset to auto</p>
+</div>
+
+<!--高度为auto，没有设置边框-->
+<!--高度是从最高块级子元素的外边框边界 到 最低块级子元素的 外边框边界的距离-->
+<div style="height: auto;background: silver;">
+  <p style="margin-top: 2em;margin-bottom: 2em;">A paragraph!</p>
+</div>
+<!--高度为auto，设置边框-->
+<!--高度是从其最高子元素的上外边距边界到其最低子元素的下外边框边界之间的距离-->
+<div style="height: auto;border-top: 1px solid;border-bottom: 1px solid;background: silver">
+  <p style="margin-top: 2em;margin-bottom: 2em;">Another paragraph!</p>
+</div>
+<hr>
+<!--合并垂直外边距-->
+<!--这种合并行为只应用于外边距。-->
+<ul>
+  <li class="cl1">List item #1</li>
+  <li class="cl1">The second list item</li>
+  <li class="cl1">Item the third</li>
+</ul>
+<hr>
+<ul class="cl2">
+  <li class="cl2">List item #1</li>
+  <li class="cl2">The second list item</li>
+  <li class="cl2">Item the third</li>
+</ul>
+<h1 class="cl2">Level-one heading</h1>
+<hr>
+<ul class="cl3">
+  <li class="cl3">List item #1</li>
+  <li class="cl3">The second list item</li>
+  <li class="cl3">Item the third</li>
+</ul>
+<h1 class="cl3">Level-one heading</h1>
+<hr>
+<!--负外边距-->
+<div style="width: 420px;background-color: silver;padding: 10px;margin-top: 50px;border: 1px solid;">
+  <p class="neg">A paragraph.</p>
+  A div.
+</div>
+</body>
+<style>
+  /*合并垂直外边距*/
+
+  /*每个列表项有10像素的上外边距和15像素的下外边距。不过，在显示这个列表时，
+  相邻列表项之间的距离是15像素，而不是25像素。
+  两个外边距中较小的一个会被较大的一个合并。*/
+  li.cl1 {
+    margin-top: 10px;
+    margin-bottom: 15px;
+  }
+
+  /*如果相邻有多个外边距，也会出现合并。*/
+  /*合并的最终结果，li的结尾到h1的开始之间有28像素的距离。*/
+  ul.cl2 {
+    margin-bottom: 15px
+  }
+
+  li.cl2 {
+    margin-top: 10px;
+    margin-bottom: 15px
+  }
+
+  h1.cl2 {
+    margin-top: 28px
+  }
+
+  /*在包含块上设置边框或内边距时，会使其子元素的外边距包含在包含块内*/
+  /*li 元素的下边距现在放在其父元素的内部，因此，这里只会在ul和h1之间发生外边距合并*/
+  ul.cl3 {
+    margin-bottom: 15px;
+    border: 1px solid;
+  }
+
+  li.cl3 {
+    margin-top: 10px;
+    margin-bottom: 15px
+  }
+
+  h1.cl3 {
+    margin-top: 28px
+  }
+
+  /*负外边距*/
+  /*如果垂直外边距都设置为负值，浏览器会取两个外边距绝对值的最大值。
+  如果一个正外边距与一个负外边距合并，会从正外边距减去这个负外边距的绝对值。*/
+  /*div的内容也向上拉了50像素*/
+  p.neg {
+    margin-top: -50px;
+    margin-right: 10px;
+    margin-left: 10px;
+    margin-bottom: 0;
+    border: 3px solid gray;
+  }
+</style>
+</html>
