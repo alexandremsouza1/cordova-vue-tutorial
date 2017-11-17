@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>基本视觉格式化</title>
+</head>
+<body>
+<!--行内元素-->
+<!--行内非替换元素-->
+<p style="font-size: 12px;line-height: 12px;">
+  This is text, <em>some of which is emphasized</em>,plus other text<br>
+  which is <strong style="font-size: 24px" ;>strongly emphasized</strong>
+  and which is <br>larger than the surrounding text.
+</p>
+<!--垂直对齐-->
+<p style="font-size: 12px;line-height: 12px;">
+  This is text,<em>some of which is emphasized</em>,plus other text<br>
+  that is <strong style="font-size: 24px;vertical-align: 4px;">strongly emphasized</strong>and that is<br>
+  larger than the surrounding text.
+</p>
+<!--tall 文本的font-size 和 line-height值相等，所有内容高度与行内框相同。-->
+<!--vertical-align: top 使得元素内框的顶端与包含该元素的行框顶端对齐-->
+<p style="font-size: 12px;line-height: 12px;">
+  this is text,<em>some of which is emphasized</em>,plus other text<br>
+  that is <strong style="font-size: 24px;">strong</strong>
+  and <span style="vertical-align: top;">tall</span> and that is<br>
+  larger than the surrounding text.
+</p>
+<!--tall 文本的line-height 小于font-size值，该元素的行框高度小于内容区高度。-->
+<!--行内框顶端与该行行框顶端对齐。所以tall 文本超出了行框。-->
+<p style="font-size: 12px;line-height: 12px;">
+  this is text,<em>some of which is emphasized</em>,plus other text<br>
+  that is <strong style="font-size: 24px;">strong</strong>
+  and <span style="vertical-align: top;line-height: 4px">tall</span> and that is<br>
+  larger than the surrounding text.
+</p>
+<hr>
+<!--管理line-height-->
+<p>
+  Not only does this paragraph have normal text,but it also<br>
+  contains a line in which<big>some big text</big> is bound,<br>
+  This large text helps illustrate our point.
+</p>
+<hr>
+<!--替换元素可以增加行框的高度，但不影响line-height值-->
+<p class="cl2">
+  The thext in this paragraph contains an img element. This element has been given a
+  height that is larger than a typical line box height for this paragraph,<img class="cl2" src="icon/logo.png"> which
+  leads
+  to some potentially unwanted consequences.The extra space you see between lines of text is to be expected.
+</p>
+<hr>
+<!--增加框属性-->
+<!--为行内替换元素增加内边距、边框和外边距会增大其行内框。-->
+<!--内边距和边框确实影响行框的高度，因为他们要作为行内替换元素的行内框的一部分-->
+<p class="cl3">
+  The text in paragraph contains two img elements.<img class="one" src="icon/logo.png">
+  These elements have been given styles <img class="two" src="icon/logo.png">that
+  lead to some potentially unwanted consequences.
+  The extra space you see between lines of text is to be expected.</p>
+</body>
+<style>
+  /*管理line-height*/
+  p {
+    font-size: 14px;
+    line-height: 1em;
+  }
+
+  /*line-height相对于元素本身的font-size设置，而不是相对父元素设置的。*/
+  big {
+    font-size: 250%;
+    line-height: 1em; /*为big元素设置line-height，提高了行框的总高度*/
+  }
+
+  /*替换元素可以增加行框的高度，但不影响line-height值*/
+  /*替换元素需要line-height值，从而垂直对齐时能定位替换元素的位置，
+  要记住，vertical-align的百分数值要相对于元素的line-height来计算。*/
+  p.cl2 {
+    font-size: 15px;
+    line-height: 18px;
+  }
+
+  img.cl2 {
+    height: 30px;
+    margin: 0;
+    padding: 0px;
+    border: none;
+  }
+
+  /*为行内替换元素增加内边距、边框和外边距会增大其行内框。*/
+  img.cl3 {
+    height: 20px;
+    width: 20px;
+  }
+
+  img.one {
+    margin: 0;
+    padding: 0;
+    border: 1px dotted;
+  }
+
+  img.two {
+    margin: 5px;
+    padding: 3px;
+    border: 1px solid;
+  }
+
+</style>
+</html>
