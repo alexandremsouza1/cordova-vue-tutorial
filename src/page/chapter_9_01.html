@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>颜色和背景</title>
+</head>
+<body>
+<!--color影响边框-->
+<p class="aside">Although the man who started the fire fled town,there's some speculation that he might have been lauded
+  for giving
+  the city an excuse to start over
+</p>
+<p class="aside1">Although the man who started the fire fled town,there's some speculation that he might have been
+  lauded
+  for giving
+  the city an excuse to start over
+</p>
+<hr>
+<!--color 影响表单元素-->
+<input type="radio" name="r2" value="a">
+<input type="checkbox" name="c3" value="one">
+<hr>
+<!--背景图像-->
+<p class="starry">
+  It's the end of autumn,which means the stars will be brighter than ever!
+  <a href="join.html" class="grid">Join us</a> for
+  a fabulous evening of planets,stars,nebulae,and more...
+</p>
+</body>
+<style>
+  /*color影响边框*/
+  p.aside {
+    color: gray; /*默认的前景色会应用到边框*/
+    border-style: solid;
+  }
+
+  p.aside1 {
+    color: gray;
+    border-color: black; /*使用border-color覆盖前景色*/
+    border-style: solid;
+  }
+
+  /*color 影响表单元素*/
+  input[type="radio"] {
+    color: #993
+  }
+
+  input[type="checkbox"] {
+    color: #666
+  }
+
+  /*背景图像*/
+  p.starry {
+    /*background-image: url("http://www.site.web/pix/stars.gif");*/
+    background-image: url("icon/cordova_icon.png");
+    color: black;
+  }
+
+  a.grid {
+    background-image: url("icon/android_icon.png");
+  }
+</style>
+</html>
