@@ -18,6 +18,22 @@
   <li>Susie W.</li>
 </ul>
 <hr>
+<!--行内块元素-->
+<div id="one">
+  This text is the content of a block-level element. Within this block-level element is another block-level element.
+  <p>Look,it's a block-level paragraph.</p>
+  Here's the rest of the DIV,which is still block-level.
+</div>
+<div id="two">
+  This text is the content of a block-level level element. Within this block-level element is an inline element.
+  <p>Look,it's an inline paragraph.</p>
+  Here's the rest of the DIV,which is still block-level.
+</div>
+<div id="three">
+  This text is the content of a block-level level element. Within this block-level element is an inline-block.
+  <p>Look,it's an inline-block paragraph</p>
+  Here's the rest of the DIV,which is still block-level.
+</div>
 </body>
 <style>
   /*改变元素显示*/
@@ -29,6 +45,34 @@
 
   #rollcall li:first-child {
     border-left: 1px solid;
+  }
+
+  /*行内块元素*/
+  div {
+    margin: 1em 0;
+    border: 1px solid
+  }
+
+  p {
+    border: 1px dotted;
+  }
+
+  div#one p {
+    display: block;
+    width: 6em;
+    text-align: center;
+  }
+
+  div#two p {
+    display: inline;
+    width: 6em;
+    text-align: center;
+  }
+
+  div#three p {
+    display: inline-block;
+    width: 6em;
+    text-align: center;
   }
 </style>
 </html>
