@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>颜色和背景</title>
+</head>
+<body>
+<!--有方向的重复-->
+<p class="" style="width: 600px;height: 200px"></p>
+<p class="repeat-x" style="width: 600px;height: 200px"></p>
+<p class="no-repeat" style="width: 600px;height: 200px"></p>
+</body>
+<style>
+  p.repeat-x {
+    background-image: url("icon/android_icon.png");
+    background-repeat: repeat-x;
+    background-color: yellow;
+  }
+
+  p {
+    background-image: url("icon/android_icon.png");
+    background-color: green;
+  }
+
+  p.no-repeat {
+    background-image: url("icon/android_icon.png");
+    background-repeat: no-repeat;
+    background-color: green;
+  }
+</style>
+</html>
