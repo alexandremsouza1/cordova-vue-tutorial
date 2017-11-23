@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>浮动和定位</title>
+</head>
+<body>
+<!--宽度和高度-->
+<!--使用偏移属性定位元素的同时设置元素大小-->
+<div id="div1">
+  包含块
+  <div id="div2">定位元素</div>
+</div>
+</body>
+<style>
+  html, body {
+    width: 100%;
+    height: 100%;
+  }
+
+  /*使用偏移属性定位元素的同时设置元素大小*/
+  #div1 {
+    text-align: right;
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    background-color: lightskyblue;
+  }
+
+  #div2 {
+    position: absolute;
+    width: auto;
+    height: auto;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 50%;
+    /*margin: 30px;*/ /*增加外边距，而保证元素不超出其包含块，可以去除height和width声明*/
+    background-color: lightgreen;
+  }
+</style>
+</html>
