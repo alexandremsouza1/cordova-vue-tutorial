@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>浮动和定位</title>
+</head>
+<body>
+<!--内容溢出和剪裁-->
+<!--溢出-->
+
+<!--overflow: visible-->
+<div id="sidebar">
+  <P>
+    This is a positioned element that is acting as a 'sidebar'
+    but it's only 7em all.Any overflowing content will be visiable
+    outside the boundaries of the element box,whether or not that's
+    what the autor really wanted.
+  </P>
+</div>
+<!--overflow: scroll-->
+<div id="sidebar1">
+  <P>
+    This is a positioned element that is acting as a 'sidebar'
+    but it's only 7em all.Any overflowing content will be visiable
+    outside the boundaries of the element box,whether or not that's
+    what the autor really wanted.
+  </P>
+</div>
+<!--overflow: hidden-->
+<div id="sidebar2">
+  <P>
+    This is a positioned element that is acting as a 'sidebar'
+    but it's only 7em all.Any overflowing content will be visiable
+    outside the boundaries of the element box,whether or not that's
+    what the autor really wanted.
+  </P>
+</div>
+<!--overflow: auto-->
+<div id="sidebar3">
+  <P>
+    This is a positioned element that is acting as a 'sidebar'
+    but it's only 7em all.Any overflowing content will be visiable
+    outside the boundaries of the element box,whether or not that's
+    what the autor really wanted.
+  </P>
+</div>
+</body>
+<style>
+  div#sidebar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 25%;
+    height: 7em;
+    background: #BBBBBB;
+    overflow: visible; /*可以看到内容溢出了元素框*/
+  }
+
+  div#sidebar1 {
+    position: absolute;
+    top: 400px;
+    left: 0;
+    width: 25%;
+    height: 7em;
+    background: #BBBBBB;
+    overflow: scroll; /*通过滚动机制使溢出的内容可用*/
+  }
+
+  div#sidebar2 {
+    position: absolute;
+    top: 600px;
+    left: 0;
+    width: 25%;
+    height: 7em;
+    background: #BBBBBB;
+    overflow: hidden; /*在内容区边界处剪裁内容*/
+  }
+
+  div#sidebar3 {
+    position: absolute;
+    top: 800px;
+    left: 0;
+    width: 25%;
+    height: 7em;
+    background: #BBBBBB;
+    overflow: auto; /*只在必要时提供滚动条*/
+  }
+</style>
+</html>

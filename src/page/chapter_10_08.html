@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>浮动和定位</title>
+</head>
+<body>
+<!--内容剪裁-->
+<div style="background-color: lightskyblue">
+  <span style="line-height: 400px">包含块</span>
+  <div id="sidebar">
+    <P style="background-color: lightgreen">
+      This is a positioned element that is acting as a 'sidebar'
+      but it's only 7em all.Any overflowing content will be visiable
+      outside the boundaries of the element box,whether or not that's
+      what the autor really wanted.
+    </P>
+  </div>
+</div>
+<div style="background-color: lightgoldenrodyellow">
+  <span style="line-height: 400px">包含块</span>
+  <div id="sidebar1">
+    <P style="background-color: lightgreen">
+      This is a positioned element that is acting as a 'sidebar'
+      but it's only 7em all.Any overflowing content will be visiable
+      outside the boundaries of the element box,whether or not that's
+      what the autor really wanted.
+    </P>
+  </div>
+</div>
+</body>
+<style>
+  div {
+    text-align: right;
+    width: 300px;
+    height: 400px;
+  }
+
+  div#sidebar {
+    position: absolute;
+    top: 0;
+    bottom: 50%;
+    right: 50%;
+    left: 0;
+    clip: rect(1em 4em 6em 1em)
+  }
+
+  div#sidebar1 {
+    position: absolute;
+    width: 20em;
+    height: 7em;
+    top: 450px;
+    bottom: 50%;
+    right: 50%;
+    left: 0;
+    clip: rect(1em 10em 8em 1em);
+  }
+</style>
+</html>
