@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>浮动和定位</title>
+</head>
+<body>
+<!--定位-->
+<!--position 可选值 static|relative|absolute|fixed|inherit-->
+
+<!--static 元素框正常生成。块级元素生成一个矩形框，作为文档流的一部分，-->
+<!--       行内元素则会创建一个或多个行框。置于其父元素中。          -->
+
+<!--releative 元素框偏移某个距离。元素仍保持未定位前的形状，它原本所占的空间仍保留。-->
+
+<!--absolute  元素框从文档流完全删除，并相对于包含块定位，包含块可能是文档中的另一个元素，-->
+<!--          或者是初始包含块。元素原先在正常文档流中所占的空间会关闭，就好像该元素原来-->
+<!--         不存在一样。元素定位后生成一个块级框，而不论原来它在正常流中生成何种类型的框。-->
+
+<!--fixed  元素框的表现类似于将position设置为absolute，不过其包含块是视窗本身。-->
+
+<!--偏移属性-->
+<!--填充包含块的右下1/4部分-->
+<div id="div1">
+  包含块
+  <div id="div2">定位元素</div>
+</div>
+</body>
+<style>
+  html, body {
+    width: 100%;
+    height: 100%;
+  }
+
+  /*填充包含块的右下1/4部分*/
+  #div1 {
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    background-color: lightskyblue;
+  }
+
+  #div2 {
+    position: absolute;
+    width: 150px;
+    height: 150px;
+    top: 50%;
+    bottom: 0;
+    left: 50%;
+    right: 0;
+    background-color: lightgreen;
+  }
+
+
+</style>
+</html>

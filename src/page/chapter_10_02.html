@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>浮动和定位</title>
+</head>
+<body>
+<!--行内框与一个浮动元素重叠时，其边框、背景和内容都在该浮动元素上"之上显示"-->
+<!--块框与一个浮动元素重叠时，其边框和背景在该浮动元素"之下"显示，内容在浮动元素＂之上＂-->
+<img src="icon/android_icon.png" class="sideline">
+<p class="box">
+  This paragraph,unremarkable in most ways,does contain an inline element.
+  This inline contains some <strong>strongly emphasized text,which is so marked to make an important point</strong>.
+  The rest of the element's content is normal anonymous inline content.
+</p>
+<p>
+  This is a second paragraph. There;s nothing remarkable about it,really.
+  Please move along.
+</p>
+<h2 id="jump-up">A heading!</h2>
+<hr>
+</body>
+<style>
+  /*行内框与一个浮动元素重叠时，其边框、背景和内容都在该浮动元素上"之上显示"*/
+  /*块框与一个浮动元素重叠时，其边框和背景在该浮动元素"之下"显示，内容在浮动元素＂之上＂*/
+  img.sideline {
+    float: left;
+    height: 150px;
+    width: 30px;
+    margin: 10px -15px 10px 10px;
+  }
+
+  p.box {
+    border: 1px solid gray;
+    padding: 0.5em;
+  }
+
+  p.box strong {
+    border: 3px double black;
+    background: silver;
+    padding: 2px;
+  }
+
+  h2#jump-up {
+    margin-top: -15px;
+    background: silver;
+  }
+</style>
+</html>
