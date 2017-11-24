@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>浮动和定位</title>
+</head>
+<body>
+<div>
+  <h1>transcendent scratchings</h1>
+</div>
+</body>
+<style>
+  div {
+    top: 60px;
+    position: relative;
+    width: 100%;
+    height: 10em;
+    border: 1px solid;
+    background: #eeeeee;
+  }
+
+  /*根据偏移属性确定元素高度*/
+
+  /* 如果包含块更高，那么h1也会更高；
+   如果包含块更窄，h1也会跟着更窄。
+   如果向h1增加外边距和内边距，
+   这会对h1的高度和宽度计算值有进一步影响。*/
+  h1 {
+    position: absolute;
+    top: 1em;
+    left: 1em;
+    right: 25%;
+    bottom: 10px;
+    margin: 0;
+    padding: 0;
+    background: silver;
+  }
+</style>
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>自动偏移</title>
+</head>
+<body>
+<!--top: auto 定位元素的顶端要相对于其未定位前本来的位置对齐-->
+<p>
+  When we consider the effect of positioning,it quickly becomes clear that
+  authors can do a great deal of damage to layout,just as they can do very
+  interesting things.<span style="position: absolute;top: auto;left: 0;">[4]</span>
+  This is usually the case with useful techologies:the sword always has a least two edges,
+  both of them sharp.
+</p>
+<hr>
+<p>
+  <!--top: auto;left: auto [4]就位于其本来的位置，由于它已经定位了，其正常流空间关闭。-->
+  <!--这会导致定位元素与正常流内容重叠-->
+  When we consider the effect of positioning,it quickly becomes clear that
+  authors can do a great deal of damage to layout,just as they can do very
+  interesting things.<span style="position: absolute;top: auto;left: auto;">[4]</span>
+  This is usually the case with useful techologies:the sword always has a least two edges,
+  both of them sharp.
+</p>
+<hr>
+<!--非替换元素的放置和大小-->
+<!--绝对定位元素会"恰当收放"-->
+<div style="position: relative;width: 25em;border: 1px dotted">
+  An absolutely positioned element can have its content
+  <span style="position: absolute;top: 0;left: 0;right: auto;width: auto;background: silver;">
+    shrink-wrapped
+  </span>
+  thanks to the way positioning rules work.
+</div>
+<hr>
+<!--将外边距为auto的绝对定位元素水平居中-->
+<div style="position: relative;width: 25em;border: 1px dotted">
+  An absolutely positioned element can have its content
+  <span style="position: absolute;top: 0;left: 1em;right: 1em;width: 10em;background: silver;margin: 0 auto">
+    shrink-wrapped
+  </span>
+  thanks to the way positioning rules work.
+</div>
+<hr>
+<!--过度受限情况下，忽略right值-->
+<!--定位元素的span属性只增加为14em，而包含块的宽度为25em。这里有11em的差额-->
+<!--在这种情况下，用户代理会忽略right的值-->
+<div style="position: relative;width: 25em;border: 1px dotted">
+  An absolutely positioned element can have its content
+  <span
+    style="position: absolute;top: 0;left: 1em;right: 1em;width: 10em;background: silver;margin-left: 1em;margin-right: 1em">
+    shrink-wrapped
+  </span>
+  thanks to the way positioning rules work.
+</div>
+<hr>
+<!--外边距为auto可以得到垂直居中效果-->
+<div style="position: relative;width: 10em;height: 10em;border: 1px solid">
+  <div style="position: absolute;left: 0;width: 100%;background: #CCCCCC;top: 0;height: 5em;bottom: 0;margin: auto 0">
+    element D
+  </div>
+</div>
+</body>
+</html>
+

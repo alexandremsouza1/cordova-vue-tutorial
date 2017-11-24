@@ -33,7 +33,7 @@
   <sub>sink into despair...</sub>
 </p>
 
-<!--设置为50%的span元素对齐时，会使其极限升高9像素，-->
+<!--设置为50%的span元素对齐时，会使其基线升高9像素，-->
 <!--这是元素继承的line-height值（18px）的一半，而不是7像素-->
 <div style="font-size: 14px;line-height: 18px">
   I felt that,if nothing else,I deserverd a
@@ -43,9 +43,9 @@
 <style>
   /*vertical-align只应用于行内元素和替换元素*/
 
-  /*baseline 要求一个元素的极限与其父元素的基线对齐
+  /*baseline 要求一个元素的基线与其父元素的基线对齐
              如果一个垂直对齐元素没有基线，如 图像、表单输入元素，或其他替换元素--
-             那么钙元素的底端与其父元素对齐
+             那么该元素的底端与其父元素对齐
    */
   img {
     vertical-align: baseline
