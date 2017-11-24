@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>浮动和定位</title>
+</head>
+<body>
+<!--绝对定位-->
+
+<!--包含块和绝对定位元素-->
+
+<!--绝对定位元素的包含块是最近的position值不为static 的祖先元素。-->
+<!--创作人员通常会选择一个元素作为决定定位元素的包含块，将其position指定为-->
+<!--relative而且没有偏移-->
+<p>
+  This paragraph does <em>not</em> establish a containing block for any of
+  its descendant elements that are absolutely positioned. Therefore,the
+  absolutely
+  positioned <b>boldface</b> element it contains will be positioned with
+  respect to the initial containing block.
+</p>
+<p class="contain">
+  Thanks to 'position: relative',this paragraph establishes a containing
+  block for any of its descendant element --<em>that is to say,<b>a boldfaced
+  element
+  that is absolutely positioned,
+</b>
+  placed with respect to its containing block(the paragraph)</em>
+  it will appear within the element box generated
+  by the paragraph
+</p>
+</body>
+<style>
+  p.contain {
+    position: relative;
+  }
+
+  p {
+    margin: 2em;
+  }
+
+  b {
+    position: absolute;
+    top: auto;
+    right: 0;
+    bottom: 0;
+    left: auto;
+    width: 8em;
+    height: 5em;
+    border: 1px solid gray;
+  }
+</style>
+</html>
