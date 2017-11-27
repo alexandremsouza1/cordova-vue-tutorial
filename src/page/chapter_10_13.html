@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>浮动和定位</title>
+</head>
+<body>
+<!--固定定位-->
+<div id="header">
+  标题帧
+</div>
+<div id="sidebar">
+  边栏帧
+</div>
+<div id="main">
+  <p>This is a paragraph</p>
+  <p>This is a paragraph</p>
+  <p>This is a paragraph</p>
+  <p>This is a paragraph</p>
+  <p>This is a paragraph</p>
+  <p>This is a paragraph</p>
+  <p>This is a paragraph</p>
+  <p>This is a paragraph</p>
+  <p>This is a paragraph</p>
+  <p>This is a paragraph</p>
+  <p>This is a paragraph</p>
+  <p>This is a paragraph</p>
+  <p>This is a paragraph</p>
+  <p>This is a paragraph</p>
+  <p>This is a paragraph</p>
+  <p>This is a paragraph</p>
+  <p>This is a paragraph</p>
+  <p>This is a paragraph</p>
+  <p>This is a paragraph</p>
+</div>
+<div id="footer">
+  页脚帧
+</div>
+</body>
+<style>
+  body {
+    background: black;
+    color: silver;
+  }
+
+  div#header {
+    position: fixed;
+    top: 0;
+    bottom: 80%;
+    left: 20%;
+    right: 0;
+    background: gray;
+    margin-bottom: 2px;
+    color: yellow;
+  }
+
+  div#sidebar {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 80%;
+    background: silver;
+    margin-right: 2px;
+    color: maroon;
+  }
+
+  div#main {
+    position: absolute;
+    top: 20%;
+    bottom: 20px;
+    left: 20%;
+    right: 0;
+    overflow: auto;
+    background: white;
+    color: black;
+  }
+
+  div#footer {
+    background: lightskyblue;
+    position: fixed;
+    bottom: 0px;
+    width: auto;
+    height: 20px;
+    left: 20%;
+    width: 80%;
+    color: black;
+  }
+</style>
+</html>
