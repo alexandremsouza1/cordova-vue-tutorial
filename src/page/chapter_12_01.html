@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>列表和生成内容</title>
+</head>
+<body>
+<!--列表类型-->
+<ol>
+  <li>Item the first</li>
+  <li class="off">Item the second</li>
+  <li>Item the third</li>
+  <li class="off">Item the forth</li>
+  <li>Item the fifth</li>
+</ol>
+<hr>
+<!--列表项图像-->
+<ul class="cl1">
+  <li>Item the first</li>
+  <li>Item the second</li>
+  <li>Item the third</li>
+  <li>Item the forth</li>
+  <li>Item the fifth</li>
+</ul>
+<hr>
+
+<!--list-style-image 可以继承-->
+<ul class="cl2">
+  <li>Item the first</li>
+  <li>Item the second</li>
+  <li>
+    <ul>
+      <li>Subitem one</li>
+      <li>Subitem two</li>
+      <li>Subitem three</li>
+    </ul>
+  </li>
+  <li>Item the forth</li>
+  <li>Item the fifth</li>
+</ul>
+</body>
+<style>
+  /*列表类型*/
+  ol li {
+    list-style-type: decimal;
+  }
+
+  li.off {
+    list-style-type: none;
+  }
+
+  /*列表项图像*/
+  ul.cl1 li {
+    list-style-image: url("icon/ic_album_black_36dp.png");
+  }
+
+  /*list-style-image 可以继承*/
+  ul.cl2 {
+    list-style-image: url("icon/ic_album_black_36dp.png");
+    list-style-type: square;
+  }
+
+  ul.cl2 ul {
+    list-style-image: none;
+    list-style-type: square;
+  }
+</style>
+</html>

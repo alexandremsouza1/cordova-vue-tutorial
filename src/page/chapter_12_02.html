@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>列表和生成内容</title>
+</head>
+<body>
+<!--列表标志位置-->
+<ul>
+  <li class="first">Item the first,the list marker for this list item is inside the content of the list item</li>
+  <li class="second">Item the second;the list marker for this list item is outside the content of the list item(Which is
+    the traditional Web rendering)
+  </li>
+</ul>
+<hr>
+<!--列表布局-->
+<ul class="cl1">
+  <li>
+    Item the first
+  </li>
+  <li>
+    Item the second
+  </li>
+  <li>
+    Item the third
+  </li>
+</ul>
+
+<ul class="cl2">
+  <li>
+    Item the first
+  </li>
+  <li>
+    Item the second
+  </li>
+  <li>
+    Item the third
+  </li>
+</ul>
+</body>
+<style>
+  /*列表标志位置*/
+  li.first {
+    list-style-position: inside;
+  }
+
+  li.second {
+    list-style-position: outside;
+  }
+
+  /*列表布局*/
+  ul.cl1 {
+    margin-left: 0em;
+    padding-left: 5em;
+    border: 1px solid red;
+  }
+
+  ul.cl2 {
+    margin-left: 5em;
+    padding-left: 0em;
+    border: 1px solid red;
+  }
+</style>
+</html>
