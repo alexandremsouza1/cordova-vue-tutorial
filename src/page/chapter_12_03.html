@@ -1,11 +1,66 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>列表和生成内容</title>
+  <meta charset="UTF-8">
+  <title>列表和生成内容</title>
 </head>
 <body>
-  <!--生成内容-->
-
+<!--生成内容-->
+<!--使用before和after伪元素-->
+<p>
+  <a href="">Jeffrey</a> Seems to be <a href="">very happy</a> about something.
+</p>
+<hr>
+<!--生成图标-->
+<p class="pdf-doc">
+  This is a pdf-doc
+</p>
+<hr>
+<!--生成块级内容-->
+<em class="em">
+  Hello,I'm a em element
+</em>
+<h1>The Secret Life of Salmon</h1>
+<hr>
+<!--考虑生成内容的放置-->
+<h1 class="cl1">The Secret Life of Salmon</h1>
 </body>
+<style>
+  /*生成文本内容*/
+  a[href]:before {
+    content: "(link) "
+  }
+
+  /*生成图标*/
+  p.pdf-doc:after {
+    content: url("icon/ic_album_black_36dp.png");
+    border: 1px solid black;
+  }
+
+  /*生成块级内容*/
+  .em:after {
+    content: "( ! )";
+    display: block;
+  }
+
+  .h1:before {
+    content: "New Section";
+    display: block;
+    color: gray;
+  }
+
+  /*考虑生成内容的放置*/
+  .cl1 {
+    border-top: 3px solid black;
+    padding-top: 0.25em;
+  }
+
+  .cl1:before {
+    content: "New Section";
+    display: block;
+    color: gray;
+    border-bottom: 1px dotted black;
+    margin-bottom: 0.25em;
+  }
+</style>
 </html>
